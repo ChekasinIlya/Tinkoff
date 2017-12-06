@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite start="1512555187851" stop="1512555223212" version="1.4.23" xmlns:ns2="urn:model.allure.qatools.yandex.ru">
+    <name>TestCase</name>
+    <test-cases>
+        <test-case start="1512555188030" stop="1512555221635" status="passed">
+            <name>test</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="host" value="Admin-ПК"/>
+                <label name="thread" value="5496@Admin-ПК.main(1)"/>
+            </labels>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="JUnit"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>

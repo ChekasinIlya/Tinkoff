@@ -1,0 +1,20 @@
+{
+  "hosts" : [ {
+    "title" : "Admin-ПК",
+    "threads" : [ {
+      "title" : "5496@Admin-ПК.main(1)",
+      "testCases" : [ {
+        "uid" : "61b818eb1b049d55",
+        "name" : "test",
+        "title" : "Test",
+        "time" : {
+          "start" : 1512555188030,
+          "stop" : 1512555221635,
+          "duration" : 33605
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      } ]
+    } ]
+  } ]
+}
