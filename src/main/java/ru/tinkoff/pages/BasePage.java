@@ -11,7 +11,6 @@ import java.util.List;
 
 /**
  * Базовый класс всех страниц
- * @autor Чексин Илья
  */
 
 public class BasePage {

@@ -1,6 +1,5 @@
 package ru.tinkoff.pages;
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -75,44 +74,5 @@ public class HCServicesMoscowPage extends BasePage{
     public void GoToTheTabPayForHousingInMoscow () throws InterruptedException {
         WebElement payHousingServicesInMoscow = GetWebElementTabsOnPageOfHCSMoscow("Оплатить ЖКУ в Москве");
         ClickOnElement(payHousingServicesInMoscow);
-    }
-
-    /**
-     * Метод совершающий проверки на невалидные значения обязательных полей
-     * Поочередно вводит в каждое из полей невалидное значение и проверяет корректность сообщения об ошибке
-     * @throws InterruptedException
-     */
-    public void FieldValidation() throws InterruptedException {
-
-        Assert.assertEquals("The error message is not correct in field \"Payer code for housing and communal services in Moscow\"", errorMassageCompulsory, GetErrorMasage(payerCode, payerCodeError, ""));
-        Assert.assertEquals("The error message is not correct in field \"For what period do you pay for utilities\"", errorMassageCompulsory, GetErrorMasage(providerPeriod, providerPeriodError, ""));
-        Assert.assertEquals("The error message is not correct in field \"Amount of payment\"", errorMassageCompulsory, GetErrorMasage(amountOfPayment, amountOfPaymentError, ""));
-        driver.navigate().refresh();
-
-        Assert.assertEquals("The error message is not correct in field \"Payer code for housing and communal services in Moscow\"", errorMassageCompulsory, GetErrorMasage(payerCode, payerCodeError, "hп(*%;№!/.="));
-        Assert.assertEquals("The error message is not correct in field \"For what period do you pay for utilities\"", errorMassageCompulsory, GetErrorMasage(providerPeriod, providerPeriodError, "hп(*%;№!/.="));
-        Assert.assertEquals("The error message is not correct in field \"Amount of payment\"", errorMassageCompulsory, GetErrorMasage(amountOfPayment, amountOfPaymentError, "hп(*%;№!/="));
-        driver.navigate().refresh();
-
-        Assert.assertEquals("The error message is not correct in field \"Payer code for housing and communal services in Moscow\"", errorMassageIncorrectly2, GetErrorMasage(payerCode, payerCodeError, "11111"));
-        Assert.assertEquals("The error message is not correct in field \"For what period do you pay for utilities\"", errorMassageIncorrectly, GetErrorMasage(providerPeriod, providerPeriodError, "132017"));
-        Assert.assertEquals("The error message is not correct in field \"Amount of payment\"", errorMassageMaximumAmount, GetErrorMasage(amountOfPayment, amountOfPaymentError, "15001"));
-        driver.navigate().refresh();
-
-        Assert.assertEquals("The error message is not correct in field \"Amount of payment\"", errorMassageMinimumAmount, GetErrorMasage(amountOfPayment, amountOfPaymentError, "9"));
-        driver.navigate().refresh();
-        Assert.assertEquals("The error message is not correct in field \"Amount of payment\"", errorMassageMinimumAmount, GetErrorMasage(amountOfPayment, amountOfPaymentError, "9.9"));
-        driver.navigate().refresh();
-        Assert.assertEquals("The error message is not correct in field \"Amount of payment\"", errorMassageMinimumAmount, GetErrorMasage(amountOfPayment, amountOfPaymentError, "9,9"));
-        driver.navigate().refresh();
-        Assert.assertEquals("The error message is not correct in field \"Amount of payment\"", errorMassageMinimumAmount, GetErrorMasage(amountOfPayment, amountOfPaymentError, "9,"));
-        driver.navigate().refresh();
-        Assert.assertEquals("The error message is not correct in field \"Amount of payment\"", errorMassageMinimumAmount, GetErrorMasage(amountOfPayment, amountOfPaymentError, "9,9,9"));
-        driver.navigate().refresh();
-        Assert.assertEquals("The error message is not correct in field \"Amount of payment\"", errorMassageMinimumAmount, GetErrorMasage(amountOfPayment, amountOfPaymentError, "9,99"));
-        driver.navigate().refresh();
-        Assert.assertEquals("The error message is not correct in field \"Amount of payment\"", errorMassageMaximumAmount, GetErrorMasage(amountOfPayment, amountOfPaymentError, "15000.1"));
-        driver.navigate().refresh();
-        Assert.assertEquals("The error message is not correct in field \"Amount of payment\"", errorMassageMaximumAmount, GetErrorMasage(amountOfPayment, amountOfPaymentError, "15000.01"));
     }
 }
